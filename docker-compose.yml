@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_HOST: 'localhost'
+      MYSQL_ROOT_PASSWORD: '1234'
+      MYSQL_DATABASE: 'todo'
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  mysql_volume:
